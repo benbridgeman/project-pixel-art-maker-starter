@@ -25,7 +25,7 @@ function makeGrid() {
   console.log('Grid Dimensions:\n- Grid height = ' + gridHeight.value + '\n- Grid width = ' + gridWidth.value);
 };
 
-// On form submisssion
+// On form submission
 size.addEventListener('submit', function(event) {
   // Prevent default action
   event.preventDefault();
