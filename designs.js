@@ -21,5 +21,14 @@ function makeGrid() {
       gridTr.appendChild(gridTd);
     }
   }
+  // Log grid dimensions to console
   console.log('Grid Dimensions:\n- Grid height = ' + gridHeight.value + '\n- Grid width = ' + gridWidth.value);
 };
+
+// On form submisssion
+size.addEventListener('submit', function(event) {
+  // Prevent default action
+  event.preventDefault();
+  // Call makeGrid function
+  makeGrid();
+})
