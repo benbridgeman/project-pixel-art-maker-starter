@@ -11,6 +11,7 @@ const table = document.getElementById('pixelCanvas');
 
 // When size is submitted by the user, call makeGrid()
 function makeGrid() {
+  table.innerHTML = "";
   // Add rows
   for (let row = 0; row < gridHeight.value; row++) {
     const gridTr = document.createElement('tr');
