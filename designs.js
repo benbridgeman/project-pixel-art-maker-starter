@@ -9,6 +9,15 @@ const gridWidth = document.getElementById('inputWeight');
 // Select grid table
 const table = document.getElementById('pixelCanvas');
 
+// Mouse event status
+let mouseDrag = false
+document.addEventListener('mousedown', function () {
+  mouseDrag = true;
+});
+document.addEventListener('mouseup', function () {
+  mouseDrag = false;
+});
+
 // When size is submitted by the user, call makeGrid()
 function makeGrid() {
   // Reset table content
@@ -28,6 +37,12 @@ function makeGrid() {
   // Add click event to all td tags in the canvas
   table.addEventListener('mousedown', function (event) {
     if (event.target.nodeName === 'TD') {
+      event.target.style.backgroundColor = color.value;
+    }
+  });
+  // Add drag functionality to canvas
+  table.addEventListener('mousemove', function (event) {
+    if (event.target.nodeName === 'TD' && mouseDrag === true) {
       event.target.style.backgroundColor = color.value;
     }
   });
