@@ -3,7 +3,7 @@ body {
 	font-size: 1.5em;
 	text-align: center;
 	background-color: #ffa31a;
-	color: #333333;
+	color: #333;
 }
 
 h1 {
@@ -26,6 +26,8 @@ table, tr, td {
 table {
 	border-collapse: collapse;
 	margin: 0 auto;
+	background-color: #fff;
+	border: solid 5px #333;
 }
 
 tr {
