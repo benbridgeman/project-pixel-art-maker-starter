@@ -8,7 +8,7 @@ const colorDivFill = document.getElementById('colorVal2');
 const eraser = document.getElementById('eraser');
 let eraserActive = false;
 // Boolean toggle for eraser button
-eraser.addEventListener('click', function() {
+eraser.addEventListener('click', function () {
   eraserActive = !eraserActive;
   eraser.classList.toggle('active');
   return eraserActive;
@@ -36,11 +36,11 @@ function makeGrid() {
   // Reset table content
   table.innerHTML = "";
   // Add rows
-  for (let row = 0; row < gridHeight.value; row ++) {
+  for (let row = 0; row < gridHeight.value; row++) {
     const gridTr = document.createElement('tr');
     table.appendChild(gridTr);
     //Add columns
-    for (let col = 0; col < gridWidth.value; col ++) {
+    for (let col = 0; col < gridWidth.value; col++) {
       const gridTd = document.createElement('td');
       gridTr.appendChild(gridTd);
     }
@@ -64,7 +64,7 @@ function makeGrid() {
 }
 
 // On form submission
-size.addEventListener('submit', function(event) {
+size.addEventListener('submit', function (event) {
   // Prevent default action
   event.preventDefault();
   // Call makeGrid function
