@@ -3,9 +3,10 @@ const color = document.getElementById('colorPicker');
 const colorFill = document.getElementById('colorPicker2');
 const colorDiv = document.getElementById('colorVal');
 const colorDivFill = document.getElementById('colorVal2');
+
+// Eraser button
 const eraser = document.getElementById('eraser');
 let eraserActive = false;
-
 // Boolean toggle for eraser button
 eraser.addEventListener('click', function() {
   eraserActive = !eraserActive;
