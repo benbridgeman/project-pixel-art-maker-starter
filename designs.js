@@ -48,17 +48,17 @@ function makeGrid() {
   // Log grid dimensions to console
   console.log('Grid Dimensions:\n- Grid height = ' + gridHeight.value + '\n- Grid width = ' + gridWidth.value);
   // Add click event to all td tags in the canvas
-  table.addEventListener('mousedown', function (event) {
-    if (event.target.nodeName === 'TD') {
-      event.target.style.backgroundColor = color.value;
+  table.addEventListener('mousedown', function ({ target }) {
+    if (target.nodeName === 'TD') {
+      target.style.backgroundColor = color.value;
     }
   });
   // Add drag functionality to canvas
-  table.addEventListener('mousemove', function (event) {
-    if (event.target.nodeName === 'TD' && mouseDrag === true && eraserActive === false) {
-      event.target.style.backgroundColor = color.value;
-    } else if (event.target.nodeName === 'TD' && mouseDrag === true && eraserActive === true) {
-      event.target.style.backgroundColor = 'transparent';
+  table.addEventListener('mousemove', function ({ target }) {
+    if (target.nodeName === 'TD' && mouseDrag && !eraserActive) {
+      target.style.backgroundColor = color.value;
+    } else if (target.nodeName === 'TD' && mouseDrag && eraserActive) {
+      target.style.backgroundColor = 'transparent';
     }
   });
 }
