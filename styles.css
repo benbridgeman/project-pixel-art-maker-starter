@@ -7,7 +7,6 @@ body {
 	font-size: 1.5em;
 	text-align: center;
 	background-color: #ffa31a;
-	color: #333;
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0;
@@ -46,22 +45,44 @@ td {
 }
 
 input[type=number] {
-	width: 6em;
+	width: 60px;
+}
+
+input[type="submit"] {
+	font-family: Amatic SC;
+	font-weight: bold;
+	font-size: 0.8em;
+	margin-top: 1em;
 }
 
 .sidebar {
-	width: 30%;
+	width: 400px;
 	height: 100%;
-	background-color: #fff;
+	background-color: #333;
+	color: #ffa31a;
+	text-align: right;
+	position: fixed;
 }
 
 .canvas {
-	width: 70%;
+	width: calc(100% - 400px);
 	height: 100%;
+	color: #333;
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 
-#colorPicker {
-	border-radius: 100%;
+.container {
+	padding-right: 2em;
+}
+
+.colorContainer {
+	margin: 0;
+	padding: 0;
+}
+
+#colorPicker, #colorPicker2 {
 	height: 60px;
 	width: 60px;
 	padding: 0;
@@ -69,16 +90,12 @@ input[type=number] {
 	outline: none;
 	-webkit-appearance: none;
 	background-color: transparent;
-	-webkit-box-shadow: 3px 3px 5px 0px rgba(51, 51, 51, 0.5);
-	-moz-box-shadow: 3px 3px 5px 0px rgba(51, 51, 51, 0.5);
-	box-shadow: 3px 3px 5px 0px rgba(51, 51, 51, 0.5);
 }
 
-#colorPicker::-webkit-color-swatch-wrapper {
+#colorPicker, #colorPicker2::-webkit-color-swatch-wrapper {
 	padding: 0;
 }
 
-#colorPicker::-webkit-color-swatch {
+#colorPicker, #colorPicker2::-webkit-color-swatch {
 	border: none;
-	border-radius: 100%;
 }

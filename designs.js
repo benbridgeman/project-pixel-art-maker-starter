@@ -1,5 +1,8 @@
 // Select color input
 const color = document.getElementById('colorPicker');
+const colorFill = document.getElementById('colorPicker2');
+const colorDiv = document.getElementById("colorVal");
+const colorDivFill = document.getElementById("colorVal2");
 
 // Select size input
 const size = document.getElementById('sizePicker');
@@ -55,3 +58,16 @@ size.addEventListener('submit', function(event) {
   // Call makeGrid function
   makeGrid();
 });
+
+// On color change show hex value for brush
+color.onchange = function () {
+  colorDiv.innerHTML = color.value;
+  colorDiv.style.color = color.value;
+}
+
+// On color change show hex value for bucket
+colorFill.onchange = function () {
+  colorDivFill.innerHTML = colorFill.value;
+  colorDivFill.style.color = colorFill.value;
+  table.style.backgroundColor = colorFill.value;
+}
