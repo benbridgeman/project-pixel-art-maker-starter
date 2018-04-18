@@ -1,8 +1,17 @@
 // Select color input
 const color = document.getElementById('colorPicker');
 const colorFill = document.getElementById('colorPicker2');
-const colorDiv = document.getElementById("colorVal");
-const colorDivFill = document.getElementById("colorVal2");
+const colorDiv = document.getElementById('colorVal');
+const colorDivFill = document.getElementById('colorVal2');
+const eraser = document.getElementById('eraser');
+let eraserActive = false;
+
+// Boolean toggle for eraser button
+eraser.addEventListener('click', function() {
+  eraserActive = !eraserActive;
+  eraser.classList.toggle('active');
+  return eraserActive;
+});
 
 // Select size input
 const size = document.getElementById('sizePicker');
@@ -45,8 +54,10 @@ function makeGrid() {
   });
   // Add drag functionality to canvas
   table.addEventListener('mousemove', function (event) {
-    if (event.target.nodeName === 'TD' && mouseDrag === true) {
+    if (event.target.nodeName === 'TD' && mouseDrag === true && eraserActive === false) {
       event.target.style.backgroundColor = color.value;
+    } else if (event.target.nodeName === 'TD' && mouseDrag === true && eraserActive === true) {
+      event.target.style.backgroundColor = 'transparent';
     }
   });
 }
